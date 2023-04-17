@@ -1,0 +1,10 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: cimg/python:3.11
+    steps:
+      - checkout
+      - run: python -m pip install poetry && poetry install
+      - run: poetry run mypy .
+      - run: poetry run pylint . --disable=missing-docstring
