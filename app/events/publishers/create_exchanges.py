@@ -17,3 +17,4 @@ def new_exchange(exchange_name: str,
 
 if __name__ == "__main__":
     new_exchange(exchange_name="staging", exchange_type=ExType.direct)
+    new_exchange(exchange_name="novels", exchange_type=ExType.direct)

@@ -1,6 +1,4 @@
-from datetime import datetime
-
-from app.core.models import ModelCollectionNovels
+from app.events.models import ModelCollectionNovels
 from app.infra.connections import mongodb_connection
 
 

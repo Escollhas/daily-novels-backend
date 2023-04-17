@@ -1,16 +1,17 @@
-FROM python:3.11 as python-base
+FROM python:3.11 as requirements-stage
 
-RUN mkdir development
-WORKDIR /development
+WORKDIR /tmp
 
-COPY /pyproject.toml /development
+RUN pip install poetry
 
-RUN pip3 install poetry
-RUN poetry config virtualenvs.create false
-RUN poetry install
+COPY ./pyproject.toml ./poetry.lock* /tmp/
 
-COPY . .
+RUN poetry export -f requirements.txt --output requirements.txt --without-hashes
 
-#CMD ["gunicorn", "-w", "4", "-k", "uvicorn.workers.UvicornWorker", "main:app", "--bind", "0.0.0.0:8000"]
+FROM tiangolo/uvicorn-gunicorn-fastapi:python3.11
 
+COPY --from=requirements-stage /tmp/requirements.txt /app/requirements.txt
 
+RUN pip install --no-cache-dir --upgrade -r /app/requirements.txt
+
+COPY ./app /app/app

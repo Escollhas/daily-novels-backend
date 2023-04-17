@@ -15,6 +15,7 @@ class ChapterReadInfo(BaseModel):
 @router.post("/chapter_read")
 async def read_chapter(chapter_info: ChapterReadInfo):
     # TODO Improve
+    # Principal point can be high needed and operations need to be fast
 
     chapter_number = chapter_info.chapter_number
     novel_name = chapter_info.novel_name

@@ -1,0 +1,1 @@
+This package has no clear purpose beyond facilitating development and study new things

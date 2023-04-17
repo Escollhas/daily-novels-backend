@@ -4,7 +4,7 @@ from app.infra.connections import rabbitmq_connection
 from app.utils.mocks import random_number_int, random_name
 
 
-def publish_message(exchange_name: str, routing_key: str, data: dict) -> None:
+def publish_message(exchange_name: str, routing_key: str, data: str) -> None:
     # TODO Checar como lidar o body ser enviado para multiplos tipos e se vale a pena ser um método único
     # TODO Criar mensagem de envio com sucesso ou erro
 
@@ -12,10 +12,7 @@ def publish_message(exchange_name: str, routing_key: str, data: dict) -> None:
 
     channel = rabbitmq_connection().channel()
 
-    serialized_data = json.dumps(data)
-
-    channel.basic_publish(exchange=exchange_name, routing_key=routing_key, body=serialized_data)
-    print("Foi?", exchange_name, routing_key, serialized_data)
+    channel.basic_publish(exchange=exchange_name, routing_key=routing_key, body=data)
 
     channel.close()
 

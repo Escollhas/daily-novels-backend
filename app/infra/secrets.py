@@ -2,7 +2,7 @@ import os
 
 from dotenv import load_dotenv
 
-from app.commons.singleton import Singleton
+from app.utils.singleton import Singleton
 
 load_dotenv()
 
