@@ -28,4 +28,9 @@ resource "docker_image" "daily-novels-api-image" {
 resource "docker_container" "daily-novels-api-container" {
   name  = "daily-novels-api-container"
   image = docker_image.daily-novels-api-image.image_id
+
+  ports {
+    external = 80
+    internal = 80
+  }
 }
