@@ -1,0 +1,7 @@
+## TODO Try other way which is not necessary export [exporsts.sh] dont smell good
+## TODO [cloudamqp, rabbitmq] Create Instance, not create now because need many settings
+## TODO Change Docker tf to use variables
+## [Docker] Version 3> is failing in docker local Windows
+## [Docker] Some bug in Windows cant read Dockerfile test: https://github.com/docker/buildx/issues/426#issuecomment-732980948
+## [Docker] TODO Find way with Updated Version without bug in Windows
+## TODO Remove mentions in Python App after terraform

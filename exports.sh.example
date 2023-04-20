@@ -1,0 +1,8 @@
+#!/bin/bash
+
+export TF_VAR_access_id=
+export TF_VAR_access_key=
+export TF_VAR_cloudamqp_api_key=
+export TF_VAR_cloudamqp_endpoint=
+export TF_VAR_cloudamqp_username=
+export TF_VAR_cloudamqp_password=

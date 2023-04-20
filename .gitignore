@@ -14,7 +14,6 @@ __pycache__/
 .Python
 build/
 develop-eggs/
-dist/
 downloads/
 eggs/
 .eggs/
@@ -28,6 +27,7 @@ share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+dist/
 MANIFEST
 
 # PyInstaller
@@ -167,5 +167,6 @@ poetry.toml
 
 # LSP config files
 pyrightconfig.json
+exports.sh
 
 # End of https://www.toptal.com/developers/gitignore/api/python

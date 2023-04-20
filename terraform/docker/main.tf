@@ -1,5 +1,3 @@
-## Version 3> is failing in docker local
-## Some bug in Windows cant read Dockerfil test: https://github.com/docker/buildx/issues/426#issuecomment-732980948
 terraform {
   required_providers {
     docker = {
@@ -10,9 +8,8 @@ terraform {
 }
 
 provider "docker" {
-    ## TO Linus should be host = "unix:///var/run/docker.sock"
-    #host = "tcp://localhost:2375"
-    host = "unix:///var/run/docker.sock"
+    #host = "tcp://localhost:2375" # -- Windows
+    host = "unix:///var/run/docker.sock" # -- Linux
 }
 
 resource "docker_image" "daily-novels-api-image" {
